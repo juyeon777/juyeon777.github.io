@@ -155,7 +155,11 @@ nav {
     nav { padding: 20px 5%; }
 }
 
-/* about 메뉴탭 관련
+/* about 메뉴탭 관련*/
+
+/* About 페이지 전용 스타일 */
+/* --- About Split Hero Style --- */
+/* about 메뉴탭 관련*/
 
 /* About 페이지 전용 스타일 */
 /* 1. 히어로 섹션 */
@@ -584,3 +588,91 @@ nav {
 
 .exp-card li::before {
     content: "•";
+}
+
+/* projects 메뉴탭 */
+
+/* --- Projects 최종 교정 스타일 --- */
+
+/* 카드들이 들어갈 전체 그리드 박스 */
+.project-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* 가로 3줄 강제 */
+    gap: 25px !important;
+    max-width: 1000px;
+    margin: 50px auto 100px !important;
+    text-align: left !important; /* 중앙 정렬 해제 */
+}
+
+/* 개별 카드 스타일 */
+.project-card {
+    background: #ffffff !important;
+    border: 1px solid #eee !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #48a999 !important;
+    box-shadow: 0 15px 30px rgba(72, 169, 153, 0.1);
+}
+
+/* 카드 상단 이미지 영역 (민트색 박스) */
+.pj-image {
+    height: 180px;
+    background: #eef7f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #48a999;
+    font-weight: 800;
+}
+
+/* 카드 하단 정보 영역 */
+.pj-info {
+    padding: 25px;
+}
+
+.pj-tag {
+    font-size: 0.75rem;
+    color: #48a999;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pj-info h3 {
+    font-size: 1.15rem;
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    line-height: 1.4;
+}
+
+.pj-info p {
+    font-size: 0.9rem;
+    color: #5d6d7e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* 하단 태그 스타일 */
+.pj-tools span {
+    font-size: 0.75rem;
+    background: #f4f7f6;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    color: #888;
+}
+
+/* 모바일 대응: 화면 좁아지면 한 줄로 */
+@media (max-width: 850px) {
+    .project-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 20px;
+    }
+}
