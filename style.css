@@ -825,3 +825,76 @@ nav {
     border-radius: 50px;
     margin-bottom: 100px;
 }
+
+/*aesthetic*/
+
+/* --- Aesthetic Pinterest Layout --- */
+
+.pin-container {
+    /* 화면 너비에 따라 열 개수 조절 */
+    column-count: 3; 
+    column-gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 100px;
+}
+
+/* 모바일/태블릿 대응 */
+@media (max-width: 900px) { .pin-container { column-count: 2; } }
+@media (max-width: 600px) { .pin-container { column-count: 1; } }
+
+.pin-item {
+    display: inline-block; /* 열이 끊기지 않게 함 */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.pin-content {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+.pin-content img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* 사진 높이 다양화 (클래스로 조절) */
+.pin-item.medium .pin-content { min-height: 250px; }
+.pin-item.tall .pin-content { min-height: 350px; }
+.pin-item.extra-tall .pin-content { min-height: 450px; }
+
+/* 마우스 올렸을 때 효과 */
+.pin-content:hover {
+    transform: scale(1.02);
+}
+
+.pin-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 은은한 어둠 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pin-content:hover .pin-overlay {
+    opacity: 1;
+}
+
+.pin-overlay span {
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px); /* 뒤에 살짝 흐리게 해서 고급스럽게 */
+}
