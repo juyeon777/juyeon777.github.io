@@ -2,29 +2,33 @@
 :root {
     --main-text: #2c3e50;
     --sub-text: #5d6d7e;
-    --point-color: #48a999;     /* 핵심 민트 그린 */
-    --point-light: #eef7f6;    /* 배경용 아주 연한 민트 */
-    --point-hover: #368d7f;    /* 버튼 호버용 진한 그린 */
+    --point-color: #48a999;
+    /* 핵심 민트 그린 */
+    --point-light: #eef7f6;
+    /* 배경용 아주 연한 민트 */
+    --point-hover: #368d7f;
+    /* 버튼 호버용 진한 그린 */
     --bg-color: #ffffff;
-    --section-bg: #f4f7f6;     /* 연한 그린빛이 도는 회색 배경 */
+    --section-bg: #f4f7f6;
+    /* 연한 그린빛이 도는 회색 배경 */
 }
 
-body { 
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; 
-    margin: 0; 
-    padding: 0; 
-    background-color: var(--bg-color); 
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
     color: var(--main-text);
     line-height: 1.7;
 }
 
 /* 2. 내비게이션 바 (상단 메뉴) */
-nav { 
-    display: flex; 
-    justify-content: space-between; 
+nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 8%; 
-    background: rgba(255, 255, 255, 0.9); 
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #eee;
     position: sticky;
@@ -32,31 +36,31 @@ nav {
     z-index: 1000;
 }
 
-.logo { 
-    font-weight: 800; 
-    font-size: 1.4rem; 
-    text-decoration: none; 
-    color: var(--main-text); 
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--main-text);
     letter-spacing: -0.5px;
 }
 
-.menu-links a { 
-    margin-left: 30px; 
-    text-decoration: none; 
-    color: var(--sub-text); 
+.menu-links a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: var(--sub-text);
     font-size: 0.95rem;
     font-weight: 500;
     transition: 0.3s;
 }
 
-.menu-links a:hover { 
-    color: var(--point-color); 
+.menu-links a:hover {
+    color: var(--point-color);
 }
 
 /* 3. 메인 컨테이너 */
-.container { 
-    max-width: 1000px; 
-    margin: 0 auto; 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 0 20px;
     text-align: center;
 }
@@ -150,9 +154,17 @@ nav {
 
 /* 반응형 설정 */
 @media (max-width: 768px) {
-    .main-title { font-size: 2.4rem; }
-    .core-values { flex-direction: column; }
-    nav { padding: 20px 5%; }
+    .main-title {
+        font-size: 2.4rem;
+    }
+
+    .core-values {
+        flex-direction: column;
+    }
+
+    nav {
+        padding: 20px 5%;
+    }
 }
 
 /* about 메뉴탭 관련*/
@@ -194,6 +206,76 @@ nav {
     font-size: 2rem;
     color: var(--main-text);
     text-align: center;
+}
+
+/* --- Personal Info Card Style 프로필 추가 --- */
+
+.personal-info-section {
+    max-width: 800px;
+    margin: 40px auto 60px;
+    /* 위아래 간격 조절 */
+    padding: 0 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #eef2f2;
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 30px rgba(72, 169, 153, 0.05);
+    /* 은은한 민트빛 그림자 */
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-item {
+    flex: 1;
+    text-align: left;
+}
+
+.info-item .label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #48a999;
+    /* 민트 포인트 컬러 */
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.info-item .value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.info-item .eng,
+.info-item .age {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+/* 모바일에서는 한 줄씩 나오게 */
+@media (max-width: 600px) {
+    .info-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-card {
+        padding: 30px;
+    }
 }
 
 /* 2. Tool Kit (스킬 카테고리) */
@@ -311,22 +393,26 @@ nav {
     position: relative;
     width: 150px;
     height: 150px;
-    transform: rotate(-90deg); /* 시작점을 위쪽으로 */
+    transform: rotate(-90deg);
+    /* 시작점을 위쪽으로 */
 }
 
 .circle-box svg circle {
     width: 100%;
     height: 100%;
     fill: none;
-    stroke: var(--section-bg); /* 배경 원색 */
+    stroke: var(--section-bg);
+    /* 배경 원색 */
     stroke-width: 10;
     stroke-linecap: round;
 }
 
 /* 🟢 실제로 차오르는 민트색 원 */
 .circle-box svg circle.progress-bar {
-    stroke: var(--point-color); /* 주연님의 민트색 */
-    stroke-dasharray: 377; /* 원의 둘레 (2 * π * r) */
+    stroke: var(--point-color);
+    /* 주연님의 민트색 */
+    stroke-dasharray: 377;
+    /* 원의 둘레 (2 * π * r) */
     /* dashoffset 공식: 377 - (377 * 퍼센트 / 100) */
     stroke-dashoffset: calc(377 - (377 * var(--percent)) / 100);
     transition: stroke-dashoffset 1.5s ease-in-out;
@@ -463,7 +549,8 @@ nav {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -48.5px; /* 선 정중앙에 위치 */
+    left: -48.5px;
+    /* 선 정중앙에 위치 */
     top: 5px;
     width: 14px;
     height: 14px;
@@ -479,8 +566,10 @@ nav {
     position: absolute;
     left: -51px;
     top: 12px;
-    width: 18px; /* 가로로 길게 */
-    height: 4px;  /* 얇게 */
+    width: 18px;
+    /* 가로로 길게 */
+    height: 4px;
+    /* 얇게 */
     background: var(--point-color);
     border: none;
     border-radius: 2px;
@@ -506,9 +595,17 @@ nav {
 }
 
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* 5. 경력 카드 공통 스타일 */
@@ -522,7 +619,8 @@ nav {
 }
 
 .exp-card:hover {
-    transform: translateX(10px); /* 오른쪽으로 살짝 밀리는 효과 */
+    transform: translateX(10px);
+    /* 오른쪽으로 살짝 밀리는 효과 */
     box-shadow: 0 10px 30px rgba(72, 169, 153, 0.1);
     border-color: var(--point-color);
 }
@@ -597,11 +695,13 @@ nav {
 /* 카드들이 들어갈 전체 그리드 박스 */
 .project-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* 가로 3줄 강제 */
+    grid-template-columns: repeat(3, 1fr) !important;
+    /* 가로 3줄 강제 */
     gap: 25px !important;
     max-width: 1000px;
     margin: 50px auto 100px !important;
-    text-align: left !important; /* 중앙 정렬 해제 */
+    text-align: left !important;
+    /* 중앙 정렬 해제 */
 }
 
 /* 개별 카드 스타일 */
@@ -676,10 +776,13 @@ nav {
         padding: 0 20px;
     }
 }
+
 /* 카드 전체 링크 스타일 초기화 */
 .project-grid a.project-card {
-    text-decoration: none; /* 밑줄 제거 */
-    color: inherit; /* 부모 색상 상속 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: inherit;
+    /* 부모 색상 상속 */
     display: flex;
     flex-direction: column;
 }
@@ -701,12 +804,14 @@ nav {
 /* 준비 중 카드 전용 스타일 */
 .project-card.coming-soon {
     opacity: 0.8;
-    border: 1px dashed var(--point-color) !important; /* 점선 테두리로 '작업 중' 표현 */
+    border: 1px dashed var(--point-color) !important;
+    /* 점선 테두리로 '작업 중' 표현 */
     cursor: default;
 }
 
 .project-card.coming-soon:hover {
-    transform: none; /* 준비 중 카드는 흔들리지 않게 */
+    transform: none;
+    /* 준비 중 카드는 흔들리지 않게 */
     box-shadow: none;
 }
 
@@ -721,7 +826,8 @@ nav {
 /* --- Project Detail Styles --- */
 .detail-hero {
     padding: 60px 0 40px;
-    text-align: left; /* 마케터의 제안서 느낌을 위해 왼쪽 정렬 */
+    text-align: left;
+    /* 마케터의 제안서 느낌을 위해 왼쪽 정렬 */
 }
 
 .back-link {
@@ -832,7 +938,7 @@ nav {
 
 .pin-container {
     /* 화면 너비에 따라 열 개수 조절 */
-    column-count: 3; 
+    column-count: 3;
     column-gap: 20px;
     width: 100%;
     max-width: 1100px;
@@ -840,11 +946,21 @@ nav {
 }
 
 /* 모바일/태블릿 대응 */
-@media (max-width: 900px) { .pin-container { column-count: 2; } }
-@media (max-width: 600px) { .pin-container { column-count: 1; } }
+@media (max-width: 900px) {
+    .pin-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .pin-container {
+        column-count: 1;
+    }
+}
 
 .pin-item {
-    display: inline-block; /* 열이 끊기지 않게 함 */
+    display: inline-block;
+    /* 열이 끊기지 않게 함 */
     width: 100%;
     margin-bottom: 20px;
 }
@@ -864,9 +980,17 @@ nav {
 }
 
 /* 사진 높이 다양화 (클래스로 조절) */
-.pin-item.medium .pin-content { min-height: 250px; }
-.pin-item.tall .pin-content { min-height: 350px; }
-.pin-item.extra-tall .pin-content { min-height: 450px; }
+.pin-item.medium .pin-content {
+    min-height: 250px;
+}
+
+.pin-item.tall .pin-content {
+    min-height: 350px;
+}
+
+.pin-item.extra-tall .pin-content {
+    min-height: 450px;
+}
 
 /* 마우스 올렸을 때 효과 */
 .pin-content:hover {
@@ -875,9 +999,12 @@ nav {
 
 .pin-overlay {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* 은은한 어둠 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    /* 은은한 어둠 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -896,5 +1023,6 @@ nav {
     border: 1px solid white;
     padding: 8px 15px;
     border-radius: 50px;
-    backdrop-filter: blur(5px); /* 뒤에 살짝 흐리게 해서 고급스럽게 */
+    backdrop-filter: blur(5px);
+    /* 뒤에 살짝 흐리게 해서 고급스럽게 */
 }
