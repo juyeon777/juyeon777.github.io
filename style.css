@@ -1026,3 +1026,275 @@ nav {
     backdrop-filter: blur(5px);
     /* 뒤에 살짝 흐리게 해서 고급스럽게 */
 }
+
+/*detail1*/
+/* --- Project Detail 1 고도화 스타일 --- */
+
+/* 02. 전략 섹션 타이틀 */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--main-text);
+    text-align: left;
+}
+
+/* 전략 카드 공통 스타일 */
+.strategy-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #f1f5f9;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.strategy-card:hover {
+    transform: translateY(-5px); /* 호버 시 부드럽게 떠오름 */
+}
+
+/* 카드 상단 헤더 (Step 표시) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.step-num {
+    background: var(--point-color);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.card-header h4 {
+    font-size: 1.4rem;
+    color: var(--main-text);
+    margin: 0;
+}
+
+/* 전략 세부 아이템 */
+.strategy-item {
+    margin-bottom: 30px;
+}
+
+.strategy-item:last-child {
+    margin-bottom: 0;
+}
+
+.strategy-item h5 {
+    font-size: 1.1rem;
+    color: var(--point-color);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.strategy-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--sub-text);
+    word-break: keep-all;
+}
+
+/* 텍스트 설명 */
+.card-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+/* --- [Option 1] 노션 이미지 목업 스타일 --- */
+.notion-mockup {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    margin: 20px 0 30px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.notion-mockup img {
+    width: 100%;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.notion-mockup:hover img {
+    transform: scale(1.03);
+}
+
+/* --- [Option 2] 노션 텍스트 박스 스타일 --- */
+.notion-style-box {
+    background: #fbfbfb;
+    border: 1px solid #efefef;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.notion-inner-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.notion-icon {
+    font-size: 1.3rem;
+}
+
+.notion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.n-item {
+    display: flex;
+    gap: 15px;
+}
+
+.n-dot {
+    background: var(--point-color);
+    color: white;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.n-item strong {
+    display: block;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.n-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 하단 요약 그리드 */
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.m-box {
+    background: #f8fafc;
+    padding: 18px 22px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.m-box:hover {
+    border-color: var(--point-color);
+    background: #fff;
+}
+
+.m-box span {
+    color: var(--point-color);
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* 하단 버튼 간격 */
+.btn-back-bottom {
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    padding: 15px 40px;
+    background: var(--main-text);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-back-bottom:hover {
+    background: var(--point-color);
+}
+/* --- 데이터 증명 섹션 스타일 --- */
+.data-evidence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.evidence-item {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.evidence-tag {
+    display: inline-block;
+    background: var(--point-light);
+    color: var(--point-color);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.evidence-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--main-text);
+}
+
+.evidence-item p {
+    font-size: 0.95rem;
+    color: var(--sub-text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.evidence-img-box {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.evidence-img-box img {
+    width: 100%;
+    display: block;
+    filter: saturate(1.1); /* 데이터를 좀 더 선명하게 보이기 위해 */
+}
+
+/* 모바일 대응 */
+@media (max-width: 850px) {
+    .data-evidence-grid { grid-template-columns: 1fr; }
+}
