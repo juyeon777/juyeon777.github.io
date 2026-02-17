@@ -676,3 +676,152 @@ nav {
         padding: 0 20px;
     }
 }
+/* 카드 전체 링크 스타일 초기화 */
+.project-grid a.project-card {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 색상 상속 */
+    display: flex;
+    flex-direction: column;
+}
+
+.pj-more {
+    margin-top: auto;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--point-color);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.project-card:hover .pj-more {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* 준비 중 카드 전용 스타일 */
+.project-card.coming-soon {
+    opacity: 0.8;
+    border: 1px dashed var(--point-color) !important; /* 점선 테두리로 '작업 중' 표현 */
+    cursor: default;
+}
+
+.project-card.coming-soon:hover {
+    transform: none; /* 준비 중 카드는 흔들리지 않게 */
+    box-shadow: none;
+}
+
+.project-card.coming-soon .pj-image {
+    background: #f8f9fa;
+    color: #bbb;
+    letter-spacing: 2px;
+}
+
+/*상세 페이지 구현*/
+
+/* --- Project Detail Styles --- */
+.detail-hero {
+    padding: 60px 0 40px;
+    text-align: left; /* 마케터의 제안서 느낌을 위해 왼쪽 정렬 */
+}
+
+.back-link {
+    display: block;
+    color: var(--point-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.detail-category {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--point-color);
+    text-transform: uppercase;
+}
+
+.detail-main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 15px 0;
+    color: var(--main-text);
+}
+
+.detail-intro {
+    font-size: 1.2rem;
+    color: var(--sub-text);
+    margin-bottom: 40px;
+    word-break: keep-all;
+}
+
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: var(--point-light);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--point-color);
+    margin-bottom: 5px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 60px 0;
+}
+
+.detail-section {
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+.detail-section h3 {
+    font-size: 1.5rem;
+    color: var(--main-text);
+    margin-bottom: 25px;
+    border-left: 4px solid var(--point-color);
+    padding-left: 15px;
+}
+
+.step-box {
+    background: #fdfdfd;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+}
+
+/* 성과 강조 섹션 */
+.detail-section.highlight {
+    background: #f4f7f6;
+    padding: 50px 30px;
+    border-radius: 30px;
+}
+
+.result-grid {
+    display: flex;
+    gap: 50px;
+    justify-content: flex-start;
+}
+
+.result-num {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--point-color);
+}
+
+.btn-back-bottom {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--main-text);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-bottom: 100px;
+}
