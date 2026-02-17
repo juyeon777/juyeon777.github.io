@@ -1049,10 +1049,12 @@ nav {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     transition: transform 0.3s ease;
     text-align: left;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .strategy-card:hover {
-    transform: translateY(-5px); /* 호버 시 부드럽게 떠오름 */
+    transform: translateY(-5px);
 }
 
 /* 카드 상단 헤더 (Step 표시) */
@@ -1241,26 +1243,38 @@ nav {
 .btn-back-bottom:hover {
     background: var(--point-color);
 }
-/* --- 데이터 증명 섹션 스타일 --- */
+
+/* --- 03. 데이터 증명 섹션 (퍼짐 방지 최종) --- */
+/* --- 03. 데이터 증명 섹션 (절대 안 퍼지는 버전) --- */
 .data-evidence-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    display: flex; /* grid 대신 flex로 변경해서 유연성 확보 */
+    flex-wrap: wrap; /* 너비 좁아지면 알아서 내려가게 */
+    gap: 25px;
     margin-top: 30px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .evidence-item {
     background: #ffffff;
-    padding: 30px;
+    padding: 25px;
     border-radius: 20px;
     border: 1px solid #f1f5f9;
     box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    
+    /* 중요: 2열 유지를 위해 너비를 50%에서 gap만큼 뺌 */
+    width: calc(50% - 13px); 
+    min-width: 0; 
+    box-sizing: border-box;
+    overflow: hidden; 
+    display: block; /* 내부 요소를 수직으로 쌓음 */
 }
 
 .evidence-tag {
     display: inline-block;
-    background: var(--point-light);
-    color: var(--point-color);
+    background: #e6f4f1;
+    color: #48a999;
     font-size: 0.75rem;
     font-weight: 800;
     padding: 4px 10px;
@@ -1269,32 +1283,41 @@ nav {
 }
 
 .evidence-item h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
-    color: var(--main-text);
+    color: #334155;
+    word-break: keep-all;
 }
 
 .evidence-item p {
-    font-size: 0.95rem;
-    color: var(--sub-text);
-    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
     margin-bottom: 20px;
+    word-break: keep-all;
 }
 
 .evidence-img-box {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #eee;
 }
 
 .evidence-img-box img {
-    width: 100%;
+    /* 이미지가 박스보다 크면 무조건 100%에 맞춰라 */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
     display: block;
-    filter: saturate(1.1); /* 데이터를 좀 더 선명하게 보이기 위해 */
+    object-fit: contain;
 }
 
-/* 모바일 대응 */
+/* 850px 이하일 때 (태블릿/모바일) 1열로 전환 */
 @media (max-width: 850px) {
-    .data-evidence-grid { grid-template-columns: 1fr; }
+    .evidence-item {
+        width: 100%; /* 한 줄에 하나씩 */
+    }
 }
